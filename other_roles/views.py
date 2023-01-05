@@ -88,7 +88,11 @@ class TotalOtherRolesLocation(APIView):
         if location:
             # profile= Profile.objects.filter(user_id = logged_user[0].id)
             # location = profile[0].location
-            if location == "Uyo":
+            if location == "General":
+                trainees = Other_roles.objects.all()
+                total = len(trainees)
+                return Response(total, status=status.HTTP_200_OK)
+            elif location == "Uyo":
                 trainees = Other_roles.objects.filter(location = "Uyo")
                 total = len(trainees)
                 return Response(total, status=status.HTTP_200_OK)
@@ -96,12 +100,16 @@ class TotalOtherRolesLocation(APIView):
                 trainees = Other_roles.objects.filter(location = "Lagos")
                 total = len(trainees)
                 return Response(total, status=status.HTTP_200_OK)
+            elif location == "Abakiliki":
+                trainees = Other_roles.objects.filter(location = "Abakiliki")
+                total = len(trainees)
+                return Response(total, status=status.HTTP_200_OK)
             elif location == "Ibadan":
                 trainees = Other_roles.objects.filter(location = "Ibadan")
                 total = len(trainees)
                 return Response(total, status=status.HTTP_200_OK)
             elif location == "PH":
-                trainees = Other_roles.objects.filter(location = "Ibadan")
+                trainees = Other_roles.objects.filter(location = "PH")
                 total = len(trainees)
                 return Response(total, status=status.HTTP_200_OK)
             else:

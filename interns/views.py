@@ -61,7 +61,7 @@ class ListInternlocation(APIView):
                 serializer = InternSerializer(trainees, context = {"request": request}, many=True)
                 return Response(serializer.data, status=status.HTTP_200_OK)
             elif location == "PH":
-                trainees = Interns.objects.filter(location = "Ibadan")
+                trainees = Interns.objects.filter(location = "PH")
                 serializer = InternSerializer(trainees, context = {"request": request}, many=True)
                 return Response(serializer.data, status=status.HTTP_200_OK)
             else:
@@ -89,8 +89,16 @@ class TotalInternLocation(APIView):
         if location:
             # profile= Profile.objects.filter(user_id = logged_user[0].id)
             # location = profile[0].location
-            if location == "Uyo":
+            if location == "General":
+                trainees = Interns.objects.all()
+                total = len(trainees)
+                return Response(total, status=status.HTTP_200_OK)
+            elif location == "Uyo":
                 trainees = Interns.objects.filter(location = "Uyo")
+                total = len(trainees)
+                return Response(total, status=status.HTTP_200_OK)
+            elif location == "Abakiliki":
+                trainees = Interns.objects.filter(location = "Abakiliki")
                 total = len(trainees)
                 return Response(total, status=status.HTTP_200_OK)
             elif location == "Lagos":
@@ -102,7 +110,7 @@ class TotalInternLocation(APIView):
                 total = len(trainees)
                 return Response(total, status=status.HTTP_200_OK)
             elif location == "PH":
-                trainees = Interns.objects.filter(location = "Ibadan")
+                trainees = Interns.objects.filter(location = "PH")
                 total = len(trainees)
                 return Response(total, status=status.HTTP_200_OK)
             else:

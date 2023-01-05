@@ -61,7 +61,7 @@ class ListTraineeLocation(APIView):
                 serializer = TraineeSerializer(trainees, context = {"request": request}, many=True)
                 return Response(serializer.data, status=status.HTTP_200_OK)
             elif location == "PH":
-                trainees = Trainees_general.objects.filter(location = "Ibadan")
+                trainees = Trainees_general.objects.filter(location = "PH")
                 serializer = TraineeSerializer(trainees, context = {"request": request}, many=True)
                 return Response(serializer.data, status=status.HTTP_200_OK)
             else:
@@ -110,7 +110,7 @@ class TotalTraineeLocation(APIView):
                 total = len(trainees)
                 return Response(total, status=status.HTTP_200_OK)
             elif location == "PH":
-                trainees = Trainees_general.objects.filter(location = "Ibadan")
+                trainees = Trainees_general.objects.filter(location = "PH")
                 total = len(trainees)
                 return Response(total, status=status.HTTP_200_OK)
             else:

@@ -61,7 +61,7 @@ class ListNYSClocation(APIView):
                 serializer = NYSCSerializer(trainees, context = {"request": request}, many=True)
                 return Response(serializer.data, status=status.HTTP_200_OK)
             elif location == "PH":
-                trainees = NYSC.objects.filter(location = "Ibadan")
+                trainees = NYSC.objects.filter(location = "PH")
                 serializer = NYSCSerializer(trainees, context = {"request": request}, many=True)
                 return Response(serializer.data, status=status.HTTP_200_OK)
             else:
@@ -89,7 +89,11 @@ class TotalNYSCLocation(APIView):
         if location:
             # profile= Profile.objects.filter(user_id = logged_user[0].id)
             # location = profile[0].location
-            if location == "Uyo":
+            if location == "General":
+                trainees = NYSC.objects.all()
+                total = len(trainees)
+                return Response(total, status=status.HTTP_200_OK)
+            elif location == "Uyo":
                 trainees = NYSC.objects.filter(location = "Uyo")
                 total = len(trainees)
                 return Response(total, status=status.HTTP_200_OK)
@@ -101,8 +105,12 @@ class TotalNYSCLocation(APIView):
                 trainees = NYSC.objects.filter(location = "Ibadan")
                 total = len(trainees)
                 return Response(total, status=status.HTTP_200_OK)
+            elif location == "Abakiliki":
+                trainees = NYSC.objects.filter(location = "Abakiliki")
+                total = len(trainees)
+                return Response(total, status=status.HTTP_200_OK)
             elif location == "PH":
-                trainees = NYSC.objects.filter(location = "Ibadan")
+                trainees = NYSC.objects.filter(location = "PH")
                 total = len(trainees)
                 return Response(total, status=status.HTTP_200_OK)
             else:

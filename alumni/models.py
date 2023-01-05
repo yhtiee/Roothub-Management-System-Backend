@@ -7,8 +7,6 @@ class Trainees_alumni(models.Model):
     other_names = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     phone_number = models.CharField(max_length=11)
-    course = models.CharField(max_length=50)
-    course_duration = models.CharField(max_length=50)
     location = models.CharField(max_length=50)
     registrationDate = models.DateField("Registration Date")
     completionDate = models.DateField("Completion Date")

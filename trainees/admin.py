@@ -5,4 +5,17 @@ from .models import *
 
 @admin.register(Trainees_general)
 class AdminTrainees(admin.ModelAdmin):
-    pass
+    list_display = [
+        "first_name",
+        "last_name",
+        "other_names",
+        "email",
+        "phone_number",
+        "course_learning",
+        "course_duration",
+        "amount_paid",
+        "balance", 
+        "location",
+        "registrationDate",
+        "profile_picture",
+    ]
