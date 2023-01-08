@@ -110,6 +110,8 @@ CORS_ALLOW_HEADERS = [
     
 ]
 
+CSRF_TRUSTED_ORIGINS = ['web-production-0dc8.up.railway.app']
+
 ROOT_URLCONF = 'Roothubmanagementsystem.urls'
 
 TEMPLATES = [
@@ -134,7 +136,7 @@ WSGI_APPLICATION = 'Roothubmanagementsystem.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-if DEBUG == False:
+if DEBUG == True:
     DATABASES = {
         'default': {
             #'ENGINE': 'django.db.backends.sqlite3',
@@ -146,13 +148,13 @@ if DEBUG == False:
             'PORT': '7982',
         }
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': BASE_DIR / 'db.sqlite3',
+#         }
+#     }
 
 
 
