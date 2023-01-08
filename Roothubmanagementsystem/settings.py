@@ -110,7 +110,7 @@ CORS_ALLOW_HEADERS = [
     
 ]
 
-CSRF_TRUSTED_ORIGINS = ['web-production-0dc8.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-0dc8.up.railway.app']
 
 ROOT_URLCONF = 'Roothubmanagementsystem.urls'
 
