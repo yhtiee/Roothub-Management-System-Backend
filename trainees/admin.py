@@ -13,6 +13,7 @@ class AdminTrainees(admin.ModelAdmin):
         "phone_number",
         "course_learning",
         "course_duration",
+        "training_fee",
         "amount_paid",
         "balance", 
         "location",

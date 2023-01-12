@@ -12,6 +12,7 @@ class Trainees_general(models.Model):
     amount_paid = models.DecimalField(max_digits=10, decimal_places=2)
     balance = models.DecimalField(max_digits=10, decimal_places=2)
     location = models.CharField(max_length=50)
+    training_fee = models.DecimalField(max_digits=10, decimal_places=2, default=100000.00)
     registrationDate = models.DateField("Registration Date", auto_now_add=True)
     profile_picture = models.ImageField(upload_to="users", null=True, blank=True)
 
