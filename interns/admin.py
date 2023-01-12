@@ -9,9 +9,13 @@ class AdminIntern(admin.ModelAdmin):
         "last_name",
         "other_names",
         "email",
+        "course_learning",
+        "course_duration",
+        "training_fee",
+        "amount_paid",
+        "balance", 
         "phone_number",
         "location",
         "registrationDate",
         "profile_picture",
-        "attached_area"
     ]
