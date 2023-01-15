@@ -30,6 +30,7 @@ urlpatterns = [
     path("other_roles/", include("other_roles.urls"), name = "other_roles"),
     # path("expenses/", include("expenses.urls"), name = "expenses"),
     path("alumni/", include("alumni.urls"), name = "expenses"),
+    path("courses/", include("popular_courses.urls"), name="courses")
 
 
 ]

@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--&hymj_qjrg=z^_75769nun0he!@kt-&9*!si-n1i79101)3$l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['web-production-0dc8.up.railway.app', "127.0.0:1"]
+ALLOWED_HOSTS = ['127.0.0.1','web-production-0dc8.up.railway.app', "127.0.0:1"]
 
 
 
@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     "trainees",
     "trainers",
     "alumni",
-    'rest_framework_simplejwt.token_blacklist'
+    'rest_framework_simplejwt.token_blacklist',
+    "popular_courses"
 ]
 
 
@@ -136,7 +137,7 @@ WSGI_APPLICATION = 'Roothubmanagementsystem.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-if DEBUG == True:
+if DEBUG == False:
     DATABASES = {
         'default': {
             #'ENGINE': 'django.db.backends.sqlite3',
@@ -148,13 +149,13 @@ if DEBUG == True:
             'PORT': '7982',
         }
     }
-# else:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': BASE_DIR / 'db.sqlite3',
-#         }
-#     }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 
