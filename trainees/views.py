@@ -11,12 +11,14 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 # Create your views here.
 
 class CreateTrainee(generics.CreateAPIView):
-    queryset = Trainees_general.objects.all()
+    queryset = Trainees_general.objects.all().order_by("-id")
     serializer_class = TraineeSerializer
+    
 
 class RetrieveTrainee(generics.RetrieveAPIView):
     queryset = Trainees_general.objects.all()
     serializer_class = TraineeSerializer
+    
 
 class DeleteTrainee(generics.DestroyAPIView):
     queryset = Trainees_general.objects.all()
@@ -29,6 +31,7 @@ class UpdateTrainee(generics.UpdateAPIView):
 class ListAllTrainee(generics.ListAPIView):
     queryset = Trainees_general.objects.all()
     serializer_class = TraineeSerializer
+    
 
 class GeneralTotalTriainee(APIView):
     def get(self, request):

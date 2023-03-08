@@ -9,6 +9,7 @@ class Interns(models.Model):
     phone_number = models.CharField(max_length=11)
     course_learning = models.CharField(max_length=50, default="Frontend Web Development")
     course_duration = models.CharField(max_length=50, default="3 Months")
+    level = models.CharField(max_length=50, default="Basic")
     amount_paid = models.DecimalField(max_digits=10, decimal_places=2, default=20000.00)
     balance = models.DecimalField(max_digits=10, decimal_places=2, default=80000.00)
     training_fee = models.DecimalField(max_digits=10, decimal_places=2, default=100000.00)

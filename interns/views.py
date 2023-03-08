@@ -8,7 +8,7 @@ from authentication.models import *
 from django.contrib.auth.models import User
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
-# Create your views here.
+# Create new views
 
 class CreateIntern(generics.CreateAPIView):
     queryset = Interns.objects.all()

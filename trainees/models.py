@@ -9,6 +9,7 @@ class Trainees_general(models.Model):
     phone_number = models.CharField(max_length=11)
     course_learning = models.CharField(max_length=50)
     course_duration = models.CharField(max_length=50)
+    level = models.CharField(max_length=50, default="Basic")
     amount_paid = models.DecimalField(max_digits=10, decimal_places=2)
     balance = models.DecimalField(max_digits=10, decimal_places=2)
     location = models.CharField(max_length=50)
